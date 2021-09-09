@@ -89,7 +89,7 @@ const testsArray = [
     "XcdM",      // returns 590  *** "XCDM"  = (X-C) + (M-D)  =  (10-100) + (1000-500)  = 590
     "MmdCLXvI",  // returns 2666     "MMDCLXVI" = M+M + D+C+L+X+V+I  =  1000+1000 + 500 + 100 + 50 + 10 + 5 + 1 = 2666
     "MMMCMXCIX", // returns 3999     "MMMCMXCIX" = M+M+M + (M-C) + (C-X) + (X-I) = 3999     
-                 //                  The highest valid Roman Numaral, although others will calculate, such as:
+                 //                  MMMCMXCIX / 3999 is the highest valid Roman Numaral string, although others will calculate, such as:
     "mMMmCMMmxMXXCxvCVMXvMCIXxvXcVMLMXcVXX" // *** returns 12369.
 ]
 
