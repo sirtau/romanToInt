@@ -2,6 +2,9 @@
 //  *                             How it works!                              *
 //  **************************************************************************
 //  Takes a string of roman numerals and converts them to an integer output.
+//      eg:     "I" = 1   
+//            "XI" = 11
+//          "XLVI" = 46
 //
 //  First step is to ensure all characters are uppercase for formatting.
 //  For each character in the string, aka the .length, an if/else statement will run.
