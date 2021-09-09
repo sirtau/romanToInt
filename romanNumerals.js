@@ -1,13 +1,13 @@
 //  **************************************************************************
 //  *                             How it works!                              *
 //  **************************************************************************
-//
 //  Takes a string of roman numerals and converts them to an integer output.
+//
 //  First step is to ensure all characters are uppercase for formatting.
 //  For each character in the string, aka the .length, an if/else statement will run.
 //
 //  Each loop will automatically increase the value of i by 1 by default.
-//  i tracks which numeral is currently being processed, and can be modified to
+//  The Index (i) tracks which numeral is currently being processed, and can be modified to
 //      skip or repeat processing a specific character.
 //
 //  Numerals stored in an object as key/value pairs.
@@ -15,8 +15,8 @@
 //        -It will minus the smaller value (current i) from the higher value (next i).
 //        -Having found the value of the combination, it will add it to the total output.
 //        -In cases like "IX", which is 1 and 10, the combination's value is 10 - 1 = 9.
-//                                              "XLV" = (L - X ) + V = 50 - 10 + 5 = 45.
-//                                    "XXIV" = X + X + (V - I) = 10 + 10 + (5 - 1) = 24.
+//                                           "XLV"  =  (L-X) + V  =  (50-10) + 5  =  45.
+//                                      "XXIV"  =  X+X + (V-I)  =  10+10 + (5-1)  =  24.
 //        -In this case, it will then also skip an index by adding +1 to i because it has
 //          identified that two indexes are linked, and moves to the next chunk of numerals.
 // 
@@ -28,7 +28,6 @@
 
 //  Numerals object that stores IVXLCDM as their key/value pairs.
 //  For example, Numerals["V"] will return 5.
-
 const Numerals = {
     I: 1,
     V: 5,
@@ -38,6 +37,7 @@ const Numerals = {
     D: 500,
     M: 1000,  
 }
+
 
 //  Advanced JS note - Javascript will automatically check if roman numerals are higher or lower!
 //  For example, "X" < "I" will return false. "I" < "X" will return true.
@@ -73,8 +73,8 @@ function romanToInt(input) {
     return output
 }
 
-// Example Inputs and their Outputs, stored in an array.
 
+// Example Inputs and their Outputs, stored in an array.
 const testsArray = [
     "iV",        // returns 4
     "X",         // returns 10
@@ -87,10 +87,10 @@ const testsArray = [
     "MMMMCMXCIX" // returns 4999 (the highest value possible)
 ]
 
+
 // forEach test in the testsArray, it will insert that test string and run the function.
 // As the function is wrapped in a console.log string output, its return value will be output to console.
 // A string is created using backticks (``) and ${} to include the return values in the logged string.
-
 testsArray.forEach(test => {
     console.log(`Input: ${test}. Output: ${romanToInt(test)}`)
 })
