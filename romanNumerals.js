@@ -38,6 +38,20 @@ const Numerals = {
     M: 1000,  
 }
 
+function romanToInt(input) {
+    input = input.toUpperCase()
+    let output = 0
+    for (i=0; i<input.length; i++) {
+        if (Numerals[input[i]] < Numerals[input[i+1]]) {
+            output += Numerals[input[i+1]] - Numerals[input[i]]
+            i++
+        } else {
+            output += Numerals[input[i]]     
+        }
+    }
+    return output
+}
+
 
 //  Advanced JS note - Javascript will automatically check if roman numerals are higher or lower!
 //  For example, "X" < "I" will return false. "I" < "X" will return true.
@@ -59,21 +73,6 @@ const Numerals = {
 //      program is doing. Either will work though!
 
 
-function romanToInt(input) {
-    input = input.toUpperCase()
-    let output = 0
-    for (i=0; i<input.length; i++) {
-        if (Numerals[input[i]] < Numerals[input[i+1]]) {
-            output += Numerals[input[i+1]] - Numerals[input[i]]
-            i++
-        } else {
-            output += Numerals[input[i]]     
-        }
-    }
-    return output
-}
-
-
 // Example Inputs and their Outputs, stored in an array.
 const testsArray = [
     "iV",        // returns 4
@@ -91,6 +90,8 @@ const testsArray = [
 // forEach test in the testsArray, it will insert that test string and run the function.
 // As the function is wrapped in a console.log string output, its return value will be output to console.
 // A string is created using backticks (``) and ${} to include the return values in the logged string.
+
 testsArray.forEach(test => {
     console.log(`Input: ${test}. Output: ${romanToInt(test)}`)
 })
+
