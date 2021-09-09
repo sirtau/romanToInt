@@ -27,7 +27,7 @@
 
 
 //  Numerals object that stores IVXLCDM as their key/value pairs.
-//  For example, Numerals[V] will return 5.
+//  For example, Numerals["V"] will return 5.
 
 const Numerals = {
     I: 1,
