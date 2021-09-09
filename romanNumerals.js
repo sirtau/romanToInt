@@ -88,7 +88,8 @@ const testsArray = [
 ]
 
 // forEach test in the testsArray, it will insert that test string and run the function.
-// As the function is wrapped in a console.log, its return value will be output to console.
+// As the function is wrapped in a console.log string output, its return value will be output to console.
+// A string is created using backticks (``) and ${} to include the return values in the logged string.
 
 testsArray.forEach(test => {
     console.log(`Input: ${test}. Output: ${romanToInt(test)}`)
