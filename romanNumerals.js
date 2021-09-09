@@ -11,16 +11,18 @@
 //      skip or repeat processing a specific character.
 //
 //  Numerals stored in an object as key/value pairs.
-//  If the numeral's value at the current index is lower than that of the next index:
-//      -It will minus the smaller value (current index) from the higher value (next index).
-//      -Having found the value of the combination, it will add it to the total output.
-//      -In cases like "IX", which is 1 and 10, the combination's value is 10 - 1 = 9.
-//                                            "XLV" = (L - X ) + V = 50 - 10 + 5 = 45.
-//                                  "XXIV" = X + X + (V - I) = 10 + 10 + (5 - 1) = 24.
-//      -In this case, it will then also skip an index by adding +1 to i because it has
-//         identified that two indexes are linked, and moves to the next "chunk" of numerals.
+//  If the numeral's value at the current index (i) is lower than that of the next index:
+//        -It will minus the smaller value (current i) from the higher value (next i).
+//        -Having found the value of the combination, it will add it to the total output.
+//        -In cases like "IX", which is 1 and 10, the combination's value is 10 - 1 = 9.
+//                                              "XLV" = (L - X ) + V = 50 - 10 + 5 = 45.
+//                                    "XXIV" = X + X + (V - I) = 10 + 10 + (5 - 1) = 24.
+//        -In this case, it will then also skip an index by adding +1 to i because it has
+//          identified that two indexes are linked, and moves to the next chunk of numerals.
 // 
-//  Otherwise, it wil simply add the value of the current numeral to the output.
+//  Otherwise (else), it wil simply add the value of the current numeral to the output.
+//
+//  The If/Else statement will repeat for the length of the input.
 //  It will then output the total value of the numerals in the string as an integer.
 
 
@@ -37,15 +39,24 @@ const Numerals = {
     M: 1000,  
 }
 
-//  A note - Javascript will automatically check if roman numerals are higher or lower!
+//  Advanced JS note - Javascript will automatically check if roman numerals are higher or lower!
 //  For example, "X" < "I" will return false. "I" < "X" will return true.
 //
 //  The if (i < i+1) statement can be written as:
 //
 //         if (input[i] < input[i+1]) {
 //
-//  Using the object, we have direct control over the values of each numeral.
-//  Either will work though!
+//  for "XI", this will process as:
+//         if ("X" < "I") {
+//  JavaScript will automatically identify the roman numerals, giving false in this case.
+//  In this example, it is not accessing the Numbers object.
+// 
+//  Example:
+//          console.log("X" < "I") 
+//          returns false
+//
+//  Using the object, we have direct control over the values of each numeral and what the
+//      program is doing. Either will work though!
 
 
 function romanToInt(input) {
