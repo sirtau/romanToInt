@@ -67,13 +67,13 @@ function romanToInt(input) {
 //         if ("I" < "X") {
 //                 or
 //         if ( 1 < 10 ) {
-//  JavaScript will automatically identify the roman numerals, giving false in this case.
-//  In these 2 examples, it is not accessing the Numbers object.
+//  JavaScript will automatically identify the roman numerals, giving true in this case.
 //
+//  In the following 2 examples, it is not accessing the Numbers object:
 //          console.log("I" < "X") 
-//          returns true
+//              returns true
 //          console.log("X" < "I") 
-//          returns false
+//              returns false
 //
 //  Using the object, we have direct control over the values of each numeral and what the
 //      program is doing. Either will work though!
