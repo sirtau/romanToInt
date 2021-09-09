@@ -77,16 +77,20 @@ function romanToInt(input) {
 
 
 // Example Inputs and their Outputs, stored in an array.
+// *** = not a valid roman numeral string but will calculate.
 const testsArray = [
-    "iV",        // returns 4
-    "X",         // returns 10
-    "xIV",       // returns 14
-    "XvI",       // returns 16
-    "IXVII",     // returns 16 (even though it's not a valid string of roman numerals, it will still calculate)
-    "XXIV",      // returns 24
-    "XcdM",      // returns 590
-    "MmdCLXvI",  // returns 2666
-    "MMMMCMXCIX" // returns 4999 (the highest value possible)
+    "iV",        // returns 4        "IV"  =  V-I  =  5-1  =  4
+    "X",         // returns 10       "X"  =  10
+    "xIV",       // returns 14       "XIV" = X + (V-I)  =  10 + (5-1)  =  14
+    "XvI",       // returns 16       "XVI"  =  X+V+I  =  10+5+1  =  16
+    "IXVII",     // returns 16   *** "IXVII" = (X-I) + V + I+I  =  (10-1) + 5 + 1+1  = 16         
+    "XXIV",      // returns 24       "XXIV" = X+X + (V-I)  =  10+10 + (5-1)  =  24
+    "DXC",       // returns 590      "DXC"  =  D + X + M  =  500 + (100-10) = 590
+    "XcdM",      // returns 590  *** "XCDM"  = (X-C) + (M-D)  =  (10-100) + (1000-500)  = 590
+    "MmdCLXvI",  // returns 2666     "MMDCLXVI" = M+M + D+C+L+X+V+I  =  1000+1000 + 500 + 100 + 50 + 10 + 5 + 1 = 2666
+    "MMMCMXCIX", // returns 3999     "MMMCMXCIX" = M+M+M + (M-C) + (C-X) + (X-I) = 3999     
+                 //                  The highest valid Roman Numaral, although others will calculate, such as:
+    "mMMmCMMmxMXXCxvCVMXvMCIXxvXcVMLMXcVXX" // *** returns 12369.
 ]
 
 
